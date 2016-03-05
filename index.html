@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>ETA for future Feed the Beast mod packs.</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="./thirdparty/css/flipclock.css" />
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.1.js"></script>
+
+    <script src="./thirdparty/js/flipclock.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+    crossorigin="anonymous"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./js/ftb.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Looking for an ETA? Oops...</h1>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="clock" style="margin:2em;"></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Good news! We've got you set...</h2>
+                <p>You most likely ended up here because one of the following reasons:</p>
+                <ol>
+                    <li>You asked for an FTB Modpack/Update ETA</li>
+                    <li>You asked for an FTB Team member for an ETA</li>
+                    <li>You asked for an FTB Stream Team member for an ETA</li>
+                    <li>Or you're generally curious about the ETA...</li>
+                </ol>
+            </div>
+            <div class="col-md-6">
+                <h2>Bad news! We've just reset the clock...</h2>
+                <p>Because all of the curiousity we decided to reset the clock every time someone comes to the page...</p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe width="640" height="360" src="https://www.youtube.com/embed/DLzxrzFCyOs?autoplay=0" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    
+    <script>
+        var socket = io();
+        socket.on('connected', function(){
+            resetClock("2592000")
+        });
+
+        $(document).ready(function(){
+           var time = 2592000;
+           startClock(time);
+        });
+    </script>
+</body>
+
+</html>
