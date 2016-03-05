@@ -14,6 +14,7 @@ io.on('connection', function(socket){
   socket.broadcast.emit('connected');
 });
 
-http.listen(80, function () {
-    console.log('listening on *:3000');
+var port = process.env.PORT || 1337;
+http.listen(port, function () {
+    console.log('listening on *:'+port);
 });
